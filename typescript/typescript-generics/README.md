@@ -1,5 +1,8 @@
 # Typescript Generics
 
+[Link do video](https://youtu.be/Gf9vS0yu7zc)  
+[Artigo no dev.to](https://dev.to/magoacademico/typescript-generics-59h6)
+
 ## Entendendo como surgiu o *Generics*
 
 Digamos que você não sabe nada sobre *Generics* e você quer criar uma função para verificar se dois números são iguais e caso não sejam, estourar um error. 

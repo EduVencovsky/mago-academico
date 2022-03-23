@@ -1,5 +1,8 @@
 # Você sabe a diferença entre string[] e [string] no typescript?
 
+[Link do video](https://youtu.be/HMfLoEJQeuM)  
+[Artigo no dev.to](https://dev.to/magoacademico/voce-sabe-a-diferenca-entre-string-e-string-no-typescript-4fg3)
+
 Você sabe a diferença entre os tipos `string[]` e `[string]` ?
 
 `string[]` é um array de strings, podendo ser um array vazio, com uma string, duas ou quantas strings você quiser.
