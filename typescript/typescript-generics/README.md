@@ -1,6 +1,6 @@
 # Typescript Generics
 
-### Entendendo como surgiu o *Generics*
+## Entendendo como surgiu o *Generics*
 
 Digamos que você não sabe nada sobre *Generics* e você quer criar uma função para verificar se dois números são iguais e caso não sejam, estourar um error. 
 
@@ -52,7 +52,7 @@ E é ai que você percebe a necessidade de usar *Generics*.
 
 Você quer fazer uma função que possa ser utilizada com mais de um tipo, mas sem especificar-lo, tendo parâmetros que são genéricos.
 
-### Utilizando *Generics*
+## Utilizando *Generics*
 
 Para utilizarmos um tipo genérico em nossa função, passaremos um parâmetro de tipo utilizando `<` e `>`, e dentro passaremos o nome do tipo que queremos. 
 
@@ -90,7 +90,7 @@ const filterById = <T>(id: T, data: Data<T>[]) => {
 };
 ```
 
-### Utilizando Type Constraints
+## Utilizando Type Constraints
 
 Essa função tem um pequeno detalhe, ela permite que se use `id` de qualquer tipo, podendo ser até mesmo um objeto ou um array, mas o `id` deve ser apenas `string` ou `number`.
 
@@ -107,3 +107,25 @@ const filterByIdExtended = <T extends string | number>(id: T, data: Data<T>[]) =
 ```
 
 Dessa forma a função aceitará qualquer objeto que tiver uma propriedade `id` do mesmo tipo que o `id`  utilizado.
+
+## Observações
+
+Agora que você sabe o que é, porque existe e com usar *Generics*, você pode ter percebido que você já viu ou já utilizou *Generics* antes sem saber.
+
+O melhor exemplo disso é o array que pode ser utilizado como `string[]`, mas esse `[]` no final de um tipo é apenas um syntax sugar para o tipo genérico de array que é `Array<string>`.
+
+Outro fator interessante para saber é que você pode passar explicitamente os parâmetros genéricos utilizando `<` + tipo generico + `>` ao chamar uma função ou utilizar um tipo.  
+
+Quando não é explicitamente utilizado o parâmetro genérico, o typescript infere o tipo automaticamente pelas variáveis, mas quando é explícito, as variáveis devem seguir estritamente o tipo passado.
+
+```ts
+const last = <T>(arr: T[]): T => arr[arr.length - 1]
+
+const nArr = [123, 456]
+
+last(nArr)
+last<number>(nArr)
+last<string>(nArr) // => error
+```
+
+No caso a cima, temos uma função com parâmetro genérico que funciona com o parâmetro não explícito e explícito, mas da erro quando o parâmetro explícito é diferente do da variável utilizada.
