@@ -44,7 +44,7 @@ Um label serve como um identificador para depois ser utilizador por um `break` o
 
 ```js
 loop1: for(let i = 0; i < 10; i++) { // loop de fora
-	loop2: for(let i = 0; i < 10; i++) { // loop de dentro
+	loop2: for(let j = 0; j < 10; j++) { // loop de dentro
 		if(condition1) {
 			break; // sai do loop2
 		}
